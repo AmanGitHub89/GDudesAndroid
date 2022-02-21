@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="160dp"
+    android:layout_height="160dp">
+
+    <ImageView
+        android:id="@+id/ProfilePic"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/defaultuserprofilepic" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Distance"
+        android:textSize="11sp"
+        android:textColor="#ffffff"
+        android:padding="2dp"
+        android:background="@drawable/blackroundedbg"
+        android:paddingBottom="8dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/UserAge"
+        android:textColor="#ffffff"
+        android:layout_gravity="bottom"
+        android:padding="2dp"
+        android:textSize="11sp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/blackroundedbg"
+        android:gravity="bottom" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/UserName"
+        android:ellipsize="end"
+        android:textColor="#ffffff"
+        android:singleLine="true"
+        android:layout_gravity="bottom"
+        android:layout_marginRight="20dp"
+        android:textSize="12sp"
+        android:padding="2dp"
+        android:background="@drawable/blackroundedbg"
+        android:gravity="bottom" />
+
+    <ImageView
+        android:id="@+id/OnlineIndicator"
+        android:layout_marginTop="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_gravity="right|top"
+        android:src="@drawable/online"
+        android:layout_width="14dp"
+        android:layout_height="14dp" />
+</FrameLayout>

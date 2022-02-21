@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:padding="5dp"
+    android:layout_height="fill_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="#66353535"
+        android:padding="3dp"
+        android:layout_height="106dp">
+
+        <ImageView
+            android:id="@+id/UplImage"
+            android:layout_alignParentLeft="true"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/defaultuserprofilepic" />
+
+        <EditText
+            android:id="@+id/PicCaption"
+            android:singleLine="true"
+            android:layout_width="fill_parent"
+            android:hint="Photo caption"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="35dp"
+            android:inputType="textCapSentences"
+            android:textColor="@android:color/white"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@+id/UplImage"
+            android:layout_height="wrap_content" />
+
+        <ImageButton
+            android:id="@+id/RemoveImage"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/close" />
+
+        <ImageView
+            android:id="@+id/CropImage"
+            android:src="@drawable/crop_image"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_width="30dp"
+            android:layout_height="30dp" />
+    </RelativeLayout>
+</RelativeLayout>

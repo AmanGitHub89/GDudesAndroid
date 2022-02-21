@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item app:state_pending="true" android:drawable="@drawable/message_pending_black" />
+    <item app:state_sent="true" android:drawable="@drawable/message_sent_black" />
+    <item app:state_delivered="true" android:drawable="@drawable/message_delivered_black" />
+    <item app:state_seen="true" android:drawable="@drawable/message_received_black" />
+    <item app:state_error="true" android:drawable="@drawable/message_error" />
+</selector>

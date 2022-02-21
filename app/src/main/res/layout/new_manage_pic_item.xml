@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="2dp"
+    android:id="@+id/item_layout"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/PicFrame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/GDPic"
+            android:src="@drawable/defaultuserprofilepic"
+            android:scaleType="fitXY"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:riv_corner_radius="5dp"
+            app:riv_border_color="#ffa500"
+            app:riv_mutate_background="true"
+            app:riv_oval="false" />
+
+        <TextView
+            android:id="@+id/PicCategory"
+            android:paddingRight="2dp"
+            android:background="@drawable/blackroundedbg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="right"
+            android:text=""
+            android:textSize="11sp"
+            android:textColor="@android:color/white" />
+
+
+        <TextView
+            android:id="@+id/NotCategorizedText"
+            android:text="Pending\napproval"
+            android:background="@drawable/blackroundedbg"
+            android:textSize="12sp"
+            android:padding="2dp"
+            android:visibility="gone"
+            android:textColor="@android:color/white"
+            android:layout_gravity="bottom|right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/PicSelectCheck"
+        android:src="@drawable/ic_check"
+        android:visibility="gone"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</RelativeLayout>

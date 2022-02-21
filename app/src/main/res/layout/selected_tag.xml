@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="5dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#5bc0de"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/TagName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Amandeep"
+            android:textColor="@android:color/white" />
+
+        <ImageView
+            android:id="@+id/RemoveTag"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="5dp"
+            android:background="@android:color/darker_gray"
+            android:src="@drawable/ic_cross_bmbc" />
+    </LinearLayout>
+</LinearLayout>
+

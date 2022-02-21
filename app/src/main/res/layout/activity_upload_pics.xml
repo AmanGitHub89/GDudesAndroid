@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorSecondary"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/ActivityToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:layout_collapseMode="pin" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <RelativeLayout
+        android:id="@+id/BodyBelowAppBar"
+        android:layout_below="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_above="@+id/BottomView"
+            android:orientation="vertical">
+
+            <GridLayout
+                android:id="@+id/GDPicGrid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:columnCount="1"
+                android:paddingBottom="50dp"
+                android:gravity="center"
+                android:horizontalSpacing="10dp"
+                android:stretchMode="columnWidth"
+                android:verticalSpacing="10dp"></GridLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/BottomView"
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical">
+
+            <Button
+                android:text="Skip"
+                android:textAllCaps="false"
+                android:id="@+id/SkipUploadingPics"
+                android:background="@drawable/login_rounded_button"
+                android:textColor="@android:color/white"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:layout_marginBottom="5dp"
+                android:layout_width="wrap_content"
+                android:visibility="gone"
+                android:layout_height="30dp" />
+
+            <TextView
+                android:id="@+id/txtImgUplMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select max 5 images at a time to upload" />
+        </LinearLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/PicturesAddFAB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/ic_add_image_fb"
+            app:backgroundTint="@color/colorPrimary" />
+    </RelativeLayout>
+</RelativeLayout>

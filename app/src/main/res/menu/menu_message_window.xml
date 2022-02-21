@@ -1,0 +1,12 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.gdudes.app.gdudesapp.activities.MessageWindow">
+    <item
+        android:id="@+id/AttachPic"
+        android:title="Attach photo"
+        android:orderInCategory="100"></item>
+    <item
+        android:id="@+id/AttachLocation"
+        android:title="Attach Location"
+        android:orderInCategory="101"></item>
+</menu>

@@ -1,0 +1,141 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorSecondary"
+    tools:context="com.gdudes.app.gdudesapp.activities.LoginRegister.RegisterProfileDescActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/ActivityToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:layout_collapseMode="pin" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <RelativeLayout
+        android:id="@+id/BodyBelowAppBar"
+        android:layout_below="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="25dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_gravity="center"
+                    android:textSize="22dp"
+                    android:text="You're almost there"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:text="Just a little more info to set up your profile"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <com.gdudes.app.gdudesapp.CustomViewTypes.GDRadioOptions
+                    android:id="@+id/SexualOrientationSpinner"
+                    style="@style/Widget.AppCompat.Spinner.Underlined"
+                    android:minWidth="200dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:minHeight="40dp"></com.gdudes.app.gdudesapp.CustomViewTypes.GDRadioOptions>
+
+                <com.gdudes.app.gdudesapp.CustomViewTypes.GDRadioOptions
+                    android:id="@+id/SexualPreferenceSpinner"
+                    style="@style/Widget.AppCompat.Spinner.Underlined"
+                    android:minWidth="200dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:minHeight="40dp"></com.gdudes.app.gdudesapp.CustomViewTypes.GDRadioOptions>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="48dp"
+                    android:background="@drawable/login_rounded_input"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/TagLine"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textSize="13sp"
+                        android:paddingLeft="10dp"
+                        android:layout_alignParentBottom="true"
+                        android:paddingRight="10dp"
+                        android:textColor="@color/colorPrimary"
+                        android:gravity="left"
+                        android:singleLine="true"
+                        android:hint="A catchy profile Tag Line"
+                        android:inputType="textCapSentences"
+                        android:minHeight="50dp"
+                        android:maxHeight="100dp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="48dp"
+                    android:background="@drawable/login_rounded_input"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/Description"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textSize="13sp"
+                        android:paddingLeft="10dp"
+                        android:layout_alignParentBottom="true"
+                        android:paddingRight="10dp"
+                        android:textColor="@color/colorPrimary"
+                        android:gravity="left"
+                        android:scrollbars="vertical"
+                        android:hint="Tell us more about you"
+                        android:inputType="textCapSentences|textMultiLine"
+                        android:minHeight="100dp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="48dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:text="Save"
+                        android:textAllCaps="false"
+                        android:id="@+id/btnSave"
+                        android:background="@drawable/login_rounded_button"
+                        android:textColor="@android:color/white"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp" />
+                </RelativeLayout>
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+</RelativeLayout>

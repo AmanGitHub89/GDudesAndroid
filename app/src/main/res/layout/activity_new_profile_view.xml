@@ -1,0 +1,1209 @@
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.gdudes.app.gdudesapp.activities.Profile.NewProfileViewActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:contentScrim="?attr/colorPrimary"
+            app:expandedTitleTextAppearance="@android:color/transparent"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:tint="#11000000"
+                app:layout_collapseMode="parallax"
+                app:layout_collapseParallaxMultiplier="0.72">
+
+                <ImageView
+                    android:id="@+id/ProfilePic"
+                    android:layout_width="match_parent"
+                    android:layout_height="400dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/defaultuserprofilepic" />
+
+                <ImageView
+                    android:id="@+id/OnlineIndicator"
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_gravity="top|left"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/online"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="10dp"
+                    android:padding="5dp"
+                    android:layout_gravity="top|right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/MySettings"
+                        android:padding="5dp"
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:src="@drawable/ic_settings"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/MyPhotoBeingReviewed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:background="@drawable/blackroundedbg"
+                    android:padding="10dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Your photo is pending review"
+                        android:textColor="@android:color/white" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/TitleFrameLayout"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_gravity="bottom"
+                android:background="@color/colorPrimary"
+                android:orientation="vertical"
+                app:layout_collapseMode="parallax"
+                app:layout_collapseParallaxMultiplier="0.12">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_gravity="bottom"
+                    android:paddingBottom="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/lblHeightWeight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="5dp"
+                        android:textColor="@android:color/white"
+                        android:textSize="15sp" />
+
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:orientation="horizontal"
+                        android:paddingRight="15dp">
+
+                        <ImageView
+                            android:id="@+id/FABBlockUser"
+                            android:layout_width="38dp"
+                            android:layout_height="38dp"
+                            android:layout_marginLeft="5dp"
+                            android:src="@drawable/ic_block"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/FABFavorite"
+                            android:layout_width="38dp"
+                            android:layout_height="38dp"
+                            android:layout_marginLeft="5dp"
+                            android:src="@drawable/ic_favorite"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/FABChat"
+                            android:layout_width="38dp"
+                            android:layout_height="38dp"
+                            android:layout_marginLeft="5dp"
+                            android:src="@drawable/ic_chat_tab"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/FABIceBreaker"
+                            android:layout_width="38dp"
+                            android:layout_height="38dp"
+                            android:layout_marginLeft="10dp"
+                            android:src="@drawable/ic_ice_breaker"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/FABEdit"
+                            android:layout_width="34dp"
+                            android:layout_height="34dp"
+                            android:layout_marginLeft="10dp"
+                            android:src="@drawable/ic_edit"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/FABPremiumUser"
+                            android:layout_width="38dp"
+                            android:layout_height="38dp"
+                            android:layout_marginLeft="10dp"
+                            android:src="@drawable/gd_logo"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/InstagramLink"
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="10dp"
+                            android:src="@drawable/instagram"
+                            android:visibility="gone" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </FrameLayout>
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/PNestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorSecondary"
+        android:scrollbars="none"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:id="@+id/NestedScrollContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="20dp">
+
+            <TextView
+                android:id="@+id/EmailID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/LastSeen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/MapLocation"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/marked_map" />
+
+                <TextView
+                    android:id="@+id/lblDistance"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_gravity="center_vertical"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/TagLine"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:gravity="bottom|left"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnMyPhotos"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:background="@drawable/blackroundedbg"
+                android:drawableLeft="@drawable/ic_photo_camera"
+                android:paddingBottom="2dp"
+                android:paddingLeft="2dp"
+                android:paddingRight="10dp"
+                android:paddingTop="2dp"
+                android:text="My photos"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white" />
+
+            <RelativeLayout
+                android:id="@+id/ProfilePicsContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/rounded_pics_scroll_background"
+                android:visibility="gone">
+
+                <com.gdudes.app.gdudesapp.CustomViewTypes.VerticalTextView
+                    android:id="@+id/PhotosText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="3dp"
+                    android:text="Photos"
+                    android:textStyle="bold" />
+
+                <HorizontalScrollView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/PhotosText"
+                    android:paddingBottom="3dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingTop="8dp">
+
+                    <LinearLayout
+                        android:id="@+id/PublicProfilePicsScroll"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"></LinearLayout>
+                </HorizontalScrollView>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical"
+                android:paddingBottom="25dp"
+                android:paddingTop="25dp">
+
+                <LinearLayout
+                    android:id="@+id/GeneralStatsHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="General Stats"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="right">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/GeneralStats_Edit"
+                                android:layout_width="54dp"
+                                android:layout_height="24dp"
+                                android:layout_marginRight="30dp"
+                                android:layout_marginTop="4dp"
+                                android:paddingLeft="20dp"
+                                android:paddingRight="10dp"
+                                android:src="@drawable/ic_edit_profile"
+                                android:visibility="gone" />
+
+                            <TextView
+                                android:id="@+id/GeneralStats_Plus"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="+"
+                                android:textSize="24sp"
+                                android:visibility="gone" />
+
+                            <TextView
+                                android:id="@+id/GeneralStats_Minus"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="—"
+                                android:textSize="24sp" />
+                        </LinearLayout>
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/GeneralStatsBody"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="5dp">
+
+                        <TableRow
+                            android:id="@+id/WaistSizeRow"
+                            android:paddingBottom="5dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Waist Size" />
+
+                            <TextView
+                                android:id="@+id/Waist"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1" />
+
+                            <com.gdudes.app.gdudesapp.CustomViewTypes.GDRadioOptions
+                                android:id="@+id/WaistSizeSpinner"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:visibility="gone"></com.gdudes.app.gdudesapp.CustomViewTypes.GDRadioOptions>
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/BodyTypeRow"
+                            android:paddingBottom="5dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Body Type" />
+
+                            <TextView
+                                android:id="@+id/BodyType"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1" />
+
+                            <com.gdudes.app.gdudesapp.CustomViewTypes.GDRadioOptions
+                                android:id="@+id/BodyTypeSpinner"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:visibility="gone"></com.gdudes.app.gdudesapp.CustomViewTypes.GDRadioOptions>
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/EthnicityRow"
+                            android:paddingBottom="5dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Ethnicity" />
+
+                            <TextView
+                                android:id="@+id/Ethnicity"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1" />
+
+                            <com.gdudes.app.gdudesapp.CustomViewTypes.GDRadioOptions
+                                android:id="@+id/EthnicitySpinner"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:visibility="gone"></com.gdudes.app.gdudesapp.CustomViewTypes.GDRadioOptions>
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/HairRow"
+                            android:paddingBottom="5dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Hair" />
+
+                            <TextView
+                                android:id="@+id/Hair"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1" />
+
+                            <com.gdudes.app.gdudesapp.CustomViewTypes.GDRadioOptions
+                                android:id="@+id/HairSpinner"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:visibility="gone"></com.gdudes.app.gdudesapp.CustomViewTypes.GDRadioOptions>
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/BodyHairRow"
+                            android:paddingBottom="5dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Body Hair" />
+
+                            <TextView
+                                android:id="@+id/BodyHair"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1" />
+
+                            <com.gdudes.app.gdudesapp.CustomViewTypes.GDRadioOptions
+                                android:id="@+id/BodyHairSpinner"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:visibility="gone"></com.gdudes.app.gdudesapp.CustomViewTypes.GDRadioOptions>
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/FacialHairRow"
+                            android:paddingBottom="5dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Facial Hair" />
+
+                            <TextView
+                                android:id="@+id/FacialHair"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1" />
+
+                            <com.gdudes.app.gdudesapp.CustomViewTypes.GDRadioOptions
+                                android:id="@+id/FacialHairSpinner"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:visibility="gone"></com.gdudes.app.gdudesapp.CustomViewTypes.GDRadioOptions>
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/TattooRow"
+                            android:paddingBottom="5dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Tattoo" />
+
+                            <TextView
+                                android:id="@+id/Tattoo"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1" />
+
+                            <com.gdudes.app.gdudesapp.CustomViewTypes.GDRadioOptions
+                                android:id="@+id/TattooSpinner"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:visibility="gone"></com.gdudes.app.gdudesapp.CustomViewTypes.GDRadioOptions>
+
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/PiercingsRow"
+                            android:paddingBottom="5dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Piercings" />
+
+                            <TextView
+                                android:id="@+id/Piercings"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1" />
+
+                            <com.gdudes.app.gdudesapp.CustomViewTypes.GDRadioOptions
+                                android:id="@+id/PiercingsSpinner"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:visibility="gone"></com.gdudes.app.gdudesapp.CustomViewTypes.GDRadioOptions>
+
+                        </TableRow>
+                    </TableLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/GeneralStatsBottomLine"
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/colorDivider"
+                    android:orientation="horizontal"></LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/SexualStatsHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Sexual Stats"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="right">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/SexualStats_Edit"
+                                android:layout_width="54dp"
+                                android:layout_height="24dp"
+                                android:layout_marginRight="30dp"
+                                android:layout_marginTop="4dp"
+                                android:paddingLeft="20dp"
+                                android:paddingRight="10dp"
+                                android:src="@drawable/ic_edit_profile"
+                                android:visibility="gone" />
+
+                            <TextView
+                                android:id="@+id/SexualStats_Plus"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="+"
+                                android:textSize="24sp"
+                                android:visibility="gone" />
+
+                            <TextView
+                                android:id="@+id/SexualStats_Minus"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="—"
+                                android:textSize="24sp" />
+                        </LinearLayout>
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/SexualStatsBody"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="5dp"
+                        android:stretchColumns="*">
+
+                        <TableRow
+                            android:id="@+id/SexualOrientationRow"
+                            android:paddingBottom="5dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Sexual Orientation" />
+
+                            <TextView
+                                android:id="@+id/SexualOrientation"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1" />
+
+                            <com.gdudes.app.gdudesapp.CustomViewTypes.GDRadioOptions
+                                android:id="@+id/SexualOrientationSpinner"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:visibility="gone"></com.gdudes.app.gdudesapp.CustomViewTypes.GDRadioOptions>
+
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/SexualPreferenceRow"
+                            android:paddingBottom="5dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Sexual Preference" />
+
+                            <TextView
+                                android:id="@+id/SexualPreference"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1" />
+
+                            <com.gdudes.app.gdudesapp.CustomViewTypes.GDRadioOptions
+                                android:id="@+id/SexualPreferenceSpinner"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:visibility="gone"></com.gdudes.app.gdudesapp.CustomViewTypes.GDRadioOptions>
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/ToolSizeRow"
+                            android:paddingBottom="5dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Tool Size" />
+
+                            <TextView
+                                android:id="@+id/ToolSize"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1" />
+
+                            <com.gdudes.app.gdudesapp.CustomViewTypes.GDRadioOptions
+                                android:id="@+id/ToolSizeSpinner"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:visibility="gone"></com.gdudes.app.gdudesapp.CustomViewTypes.GDRadioOptions>
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/ToolTypeRow"
+                            android:paddingBottom="5dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Tool Type" />
+
+                            <TextView
+                                android:id="@+id/ToolType"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1" />
+
+                            <com.gdudes.app.gdudesapp.CustomViewTypes.GDRadioOptions
+                                android:id="@+id/ToolTypeSpinner"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:visibility="gone"></com.gdudes.app.gdudesapp.CustomViewTypes.GDRadioOptions>
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/OralRow"
+                            android:paddingBottom="5dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Oral" />
+
+                            <TextView
+                                android:id="@+id/Oral"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1" />
+
+                            <com.gdudes.app.gdudesapp.CustomViewTypes.GDRadioOptions
+                                android:id="@+id/OralSpinner"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:visibility="gone"></com.gdudes.app.gdudesapp.CustomViewTypes.GDRadioOptions>
+
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/SAndMRow"
+                            android:paddingBottom="5dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="S&amp;M" />
+
+                            <TextView
+                                android:id="@+id/SAndM"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1" />
+
+                            <com.gdudes.app.gdudesapp.CustomViewTypes.GDRadioOptions
+                                android:id="@+id/SAndMSpinner"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:visibility="gone"></com.gdudes.app.gdudesapp.CustomViewTypes.GDRadioOptions>
+
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/LookingForRow"
+                            android:paddingBottom="5dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Looking For" />
+
+                            <TextView
+                                android:id="@+id/LookingFor"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1" />
+
+                            <com.gdudes.app.gdudesapp.CustomViewTypes.GDCheckboxItems
+                                android:id="@+id/LookingForSpinner"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="top"
+                                android:layout_weight="1"
+                                android:visibility="gone"></com.gdudes.app.gdudesapp.CustomViewTypes.GDCheckboxItems>
+
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/FetishRow"
+                            android:paddingBottom="5dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Fetish" />
+
+                            <TextView
+                                android:id="@+id/Fetish"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1" />
+
+                            <com.gdudes.app.gdudesapp.CustomViewTypes.GDCheckboxItems
+                                android:id="@+id/FetishSpinner"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="top"
+                                android:layout_weight="1"
+                                android:visibility="gone"></com.gdudes.app.gdudesapp.CustomViewTypes.GDCheckboxItems>
+
+                        </TableRow>
+                    </TableLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/SexualStatsBottomLine"
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/colorDivider"
+                    android:orientation="horizontal"></LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/SocialStatsHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="horizontal"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Social Stats"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="right">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/SocialStats_Edit"
+                                android:layout_width="54dp"
+                                android:layout_height="24dp"
+                                android:layout_marginRight="30dp"
+                                android:layout_marginTop="4dp"
+                                android:paddingLeft="20dp"
+                                android:paddingRight="10dp"
+                                android:src="@drawable/ic_edit_profile"
+                                android:visibility="gone" />
+
+                            <TextView
+                                android:id="@+id/SocialStats_Plus"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="+"
+                                android:textSize="24sp"
+                                android:visibility="gone" />
+
+                            <TextView
+                                android:id="@+id/SocialStats_Minus"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="—"
+                                android:textSize="24sp" />
+                        </LinearLayout>
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/SocialStatsBody"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="5dp"
+                        android:stretchColumns="*">
+
+                        <TableRow
+                            android:id="@+id/ProfessionRow"
+                            android:paddingBottom="5dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Profession" />
+
+                            <TextView
+                                android:id="@+id/Profession"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1" />
+
+                            <com.gdudes.app.gdudesapp.CustomViewTypes.GDRadioOptions
+                                android:id="@+id/ProfessionSpinner"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:visibility="gone"></com.gdudes.app.gdudesapp.CustomViewTypes.GDRadioOptions>
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/ReligionRow"
+                            android:paddingBottom="5dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Religion" />
+
+                            <TextView
+                                android:id="@+id/Religion"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1" />
+
+                            <com.gdudes.app.gdudesapp.CustomViewTypes.GDRadioOptions
+                                android:id="@+id/ReligionSpinner"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:visibility="gone"></com.gdudes.app.gdudesapp.CustomViewTypes.GDRadioOptions>
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/SmokingRow"
+                            android:paddingBottom="5dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Smoking" />
+
+                            <TextView
+                                android:id="@+id/Smoking"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1" />
+
+                            <com.gdudes.app.gdudesapp.CustomViewTypes.GDRadioOptions
+                                android:id="@+id/SmokingSpinner"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:visibility="gone"></com.gdudes.app.gdudesapp.CustomViewTypes.GDRadioOptions>
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/DrinkingRow"
+                            android:paddingBottom="5dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Drinking" />
+
+                            <TextView
+                                android:id="@+id/Drinking"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1" />
+
+                            <com.gdudes.app.gdudesapp.CustomViewTypes.GDRadioOptions
+                                android:id="@+id/DrinkingSpinner"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:visibility="gone"></com.gdudes.app.gdudesapp.CustomViewTypes.GDRadioOptions>
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/RelationshipStatusRow"
+                            android:paddingBottom="5dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Relationship Status" />
+
+                            <TextView
+                                android:id="@+id/RelationshipStatus"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1" />
+
+                            <com.gdudes.app.gdudesapp.CustomViewTypes.GDRadioOptions
+                                android:id="@+id/RelationshipStatusSpinner"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:visibility="gone"></com.gdudes.app.gdudesapp.CustomViewTypes.GDRadioOptions>
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/LanguagesKnownRow"
+                            android:paddingBottom="5dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Languages Known" />
+
+                            <TextView
+                                android:id="@+id/LanguagesKnown"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1" />
+
+                            <com.gdudes.app.gdudesapp.CustomViewTypes.GDCheckboxItems
+                                android:id="@+id/LanguagesKnownSpinner"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="top"
+                                android:layout_weight="1"
+                                android:visibility="gone"></com.gdudes.app.gdudesapp.CustomViewTypes.GDCheckboxItems>
+                        </TableRow>
+                    </TableLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/SocialStatsBottomLine"
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/colorDivider"
+                    android:orientation="horizontal"></LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/DescriptionHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Description"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="right">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/Description_Edit"
+                                android:layout_width="54dp"
+                                android:layout_height="24dp"
+                                android:layout_marginRight="30dp"
+                                android:layout_marginTop="4dp"
+                                android:paddingLeft="20dp"
+                                android:paddingRight="10dp"
+                                android:src="@drawable/ic_edit_profile"
+                                android:visibility="gone" />
+
+                            <TextView
+                                android:id="@+id/Description_Plus"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="+"
+                                android:textSize="24sp"
+                                android:visibility="gone" />
+
+                            <TextView
+                                android:id="@+id/Description_Minus"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="—"
+                                android:textSize="24sp" />
+                        </LinearLayout>
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/DescriptionBody"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="10dp">
+
+                    <TextView
+                        android:id="@+id/Description"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <EditText
+                        android:id="@+id/DescriptionEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="25dp"
+                        android:inputType="textCapSentences|textMultiLine"
+                        android:minHeight="100dp"
+                        android:visibility="gone" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:layout_anchor="@id/TitleFrameLayout"
+        app:layout_collapseMode="pin"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/toolbarTitleAge"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="8dp"
+                android:gravity="center_vertical"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <RelativeLayout
+        android:id="@+id/BodyBelowAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:background="@android:color/transparent"></RelativeLayout>
+
+    <gdudesapp.GDFloatingActionButton.FloatingActionButton
+        android:id="@+id/PopularGuysFAB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:layout_gravity="top|right"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/popular_guys"
+        android:visibility="gone"
+        app:backgroundTint="@color/colorAccent" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

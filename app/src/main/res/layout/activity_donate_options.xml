@@ -1,0 +1,89 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="310dp"
+    android:paddingLeft="2dp"
+    android:paddingRight="2dp"
+    android:id="@+id/DonateMainContainer"
+    tools:context="com.gdudes.app.gdudesapp.BillingUtil.DonateOptionsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/Donate300Dollar"
+            android:orientation="vertical"
+            android:background="@drawable/ripple_effect"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
+
+            <TextView
+                android:text="Donate $300 to GDudes"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:orientation="horizontal"
+            android:background="@color/colorDivider"
+            android:layout_height="1dp"></LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/Donate200Dollar"
+            android:orientation="vertical"
+            android:background="@drawable/ripple_effect"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
+
+            <TextView
+                android:text="Donate $200 to GDudes"
+                android:textColor="@android:color/white"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:orientation="horizontal"
+            android:background="@color/colorDivider"
+            android:layout_height="1dp"></LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/Donate100Dollar"
+            android:orientation="vertical"
+            android:background="@drawable/ripple_effect"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
+
+            <TextView
+                android:text="Donate $100 to GDudes"
+                android:textColor="@android:color/white"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/btnClose"
+        android:src="@drawable/close"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_width="28dp"
+        android:layout_height="28dp" />
+</RelativeLayout>

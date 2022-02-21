@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_Copy"
+        android:icon="@drawable/ic_copy"
+        android:orderInCategory="100"
+        android:title="Copy"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_Delete"
+        android:icon="@drawable/ic_delete"
+        android:orderInCategory="100"
+        android:title="Delete"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_Search"
+        android:icon="@drawable/ic_search_tab"
+        android:orderInCategory="100"
+        android:title="Search Text"
+        app:showAsAction="always|collapseActionView"
+        android:actionLayout="@layout/messages_search" />
+</menu>

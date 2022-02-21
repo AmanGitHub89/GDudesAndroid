@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/MessageContainer"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="100dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="2dp"
+            android:layout_marginLeft="40dp"
+            android:background="@drawable/message_to"
+            android:paddingBottom="4dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:paddingTop="4dp">
+
+            <ImageView
+                android:id="@+id/MapLocation"
+                android:visibility="gone"
+                android:src="@drawable/marked_map"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <FrameLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/txtMessage"
+                    android:layout_marginBottom="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:autoLink="phone"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textSize="14sp" />
+
+                <LinearLayout
+                    android:layout_gravity="bottom|right"
+                    android:layout_marginTop="15dp"
+                    android:paddingLeft="3dp"
+                    android:layout_alignParentRight="true"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/MessageSentDT"
+                        android:textSize="10sp"
+                        android:textColor="@color/colorPrimaryText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <com.gdudes.app.gdudesapp.CustomViewTypes.GDSentMessageStateButton
+                        android:id="@+id/MessageStatus"
+                        android:background="@drawable/convlast_sentmessagestates"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"></com.gdudes.app.gdudesapp.CustomViewTypes.GDSentMessageStateButton>
+                </LinearLayout>
+            </FrameLayout>
+
+            <ImageView
+                android:id="@+id/AttachedPhoto"
+                android:background="@color/colorSecondary"
+                android:src="@drawable/message_pic_placeholder_2"
+                android:visibility="gone"
+                android:scaleType="centerCrop"
+                android:layout_width="160dp"
+                android:layout_height="160dp" />
+        </LinearLayout>
+    </RelativeLayout>
+</FrameLayout>
+

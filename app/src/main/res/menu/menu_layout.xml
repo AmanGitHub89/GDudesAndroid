@@ -1,0 +1,47 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.gdudes.app.gdudesapp.activities.MainLayout.LayoutActivity">
+    <item
+        android:id="@+id/action_MapView"
+        android:icon="@drawable/ic_nearby_1"
+        android:orderInCategory="100"
+        android:title="Map View"
+        app:showAsAction="always|collapseActionView" />
+    <item
+        android:id="@+id/action_GridView"
+        android:icon="@drawable/ic_grid_view"
+        android:orderInCategory="100"
+        android:title="Grid View"
+        app:showAsAction="always|collapseActionView" />
+    <item
+        android:id="@+id/action_Locations"
+        android:icon="@drawable/ic_map_view"
+        android:orderInCategory="100"
+        android:title="Filter"
+        app:showAsAction="always|collapseActionView" />
+    <item
+        android:id="@+id/action_Filter"
+        android:icon="@drawable/ic_filter"
+        android:orderInCategory="100"
+        android:title="Filter"
+        app:showAsAction="always|collapseActionView" />
+    <item
+        android:id="@+id/action_FilterSelected"
+        android:icon="@drawable/ic_filter_selected"
+        android:orderInCategory="100"
+        android:title="Filter"
+        app:showAsAction="always|collapseActionView"
+        android:actionLayout="@layout/messages_search" />
+    <item
+        android:id="@+id/action_Search"
+        android:icon="@drawable/ic_search_tab"
+        android:orderInCategory="100"
+        android:title="Search"
+        app:showAsAction="always|collapseActionView" />
+    <item
+        android:id="@+id/action_MarkAllRead"
+        android:orderInCategory="100"
+        android:title="Mark all read"
+        app:showAsAction="never" />
+</menu>

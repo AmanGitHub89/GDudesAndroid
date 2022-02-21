@@ -1,0 +1,636 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorSecondary"
+    tools:context="com.gdudes.app.gdudesapp.activities.MainLayout.AddUserFilter">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/ActivityToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:layout_collapseMode="pin" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <RelativeLayout
+        android:id="@+id/BodyBelowAppBar"
+        android:layout_below="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent">
+
+        <LinearLayout
+            android:id="@+id/RelFilterName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:text="Filter Name"
+                android:id="@+id/lblFilterName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:minWidth="200dp"
+                android:maxWidth="200dp"
+                android:layout_marginLeft="10dp"
+                android:id="@+id/FilterName"
+                android:inputType="textCapSentences"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_below="@+id/RelFilterName"
+            android:paddingTop="15dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/SexualStatsHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@color/colorPrimary"
+                    android:orientation="horizontal"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Sexual Stats"
+                        android:textColor="@android:color/white" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="right">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/SexualStats_Plus"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="+"
+                                android:visibility="gone"
+                                android:textColor="@android:color/white"
+                                android:textSize="24sp" />
+
+                            <TextView
+                                android:id="@+id/SexualStats_Minus"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="—"
+                                android:textColor="@android:color/white"
+                                android:textSize="24sp" />
+                        </LinearLayout>
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/SexualStatsBody"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="5dp"
+                        android:stretchColumns="*">
+
+                        <TableRow android:paddingBottom="5dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Preference" />
+
+                            <com.gdudes.app.gdudesapp.CustomViewTypes.GDCheckboxItems
+                                android:id="@+id/PreferenceSpinner"
+                                style="@style/Widget.AppCompat.Spinner.Underlined"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"></com.gdudes.app.gdudesapp.CustomViewTypes.GDCheckboxItems>
+                        </TableRow>
+
+                        <TableRow android:paddingBottom="5dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Orals" />
+
+                            <com.gdudes.app.gdudesapp.CustomViewTypes.GDCheckboxItems
+                                android:id="@+id/OralsSpinner"
+                                style="@style/Widget.AppCompat.Spinner.Underlined"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"></com.gdudes.app.gdudesapp.CustomViewTypes.GDCheckboxItems>
+                        </TableRow>
+
+                        <TableRow android:paddingBottom="5dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Looking for" />
+
+                            <com.gdudes.app.gdudesapp.CustomViewTypes.GDCheckboxItems
+                                android:id="@+id/LookingforSpinner"
+                                style="@style/Widget.AppCompat.Spinner.Underlined"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"></com.gdudes.app.gdudesapp.CustomViewTypes.GDCheckboxItems>
+                        </TableRow>
+
+                        <TableRow android:paddingBottom="5dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Tool size" />
+
+                            <com.gdudes.app.gdudesapp.CustomViewTypes.GDCheckboxItems
+                                android:id="@+id/ToolSizeSpinner"
+                                style="@style/Widget.AppCompat.Spinner.Underlined"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"></com.gdudes.app.gdudesapp.CustomViewTypes.GDCheckboxItems>
+                        </TableRow>
+
+                        <TableRow android:paddingBottom="5dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Tool type" />
+
+                            <com.gdudes.app.gdudesapp.CustomViewTypes.GDRadioOptions
+                                android:id="@+id/ToolTypeSpinner"
+                                style="@style/Widget.AppCompat.Spinner.Underlined"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"></com.gdudes.app.gdudesapp.CustomViewTypes.GDRadioOptions>
+                        </TableRow>
+
+                        <TableRow android:paddingBottom="5dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Sexual Orientation" />
+
+                            <com.gdudes.app.gdudesapp.CustomViewTypes.GDCheckboxItems
+                                android:id="@+id/SexualOrientationSpinner"
+                                style="@style/Widget.AppCompat.Spinner.Underlined"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"></com.gdudes.app.gdudesapp.CustomViewTypes.GDCheckboxItems>
+
+                        </TableRow>
+                    </TableLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/BodyStatsHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:background="@color/colorPrimary"
+                    android:orientation="horizontal"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Body Stats"
+                        android:textColor="@android:color/white" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="right">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/BodyStats_Plus"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="+"
+                                android:textColor="@android:color/white"
+                                android:textSize="24sp" />
+
+                            <TextView
+                                android:id="@+id/BodyStats_Minus"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="—"
+                                android:visibility="gone"
+                                android:textColor="@android:color/white"
+                                android:textSize="24sp" />
+                        </LinearLayout>
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/BodyStatsBody"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="5dp"
+                        android:stretchColumns="*">
+
+                        <TableRow android:paddingBottom="5dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Min height" />
+
+                            <com.gdudes.app.gdudesapp.CustomViewTypes.GDRadioOptions
+                                android:id="@+id/MinHeightSpinner"
+                                style="@style/Widget.AppCompat.Spinner.Underlined"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"></com.gdudes.app.gdudesapp.CustomViewTypes.GDRadioOptions>
+                        </TableRow>
+
+                        <TableRow android:paddingBottom="5dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Max height" />
+
+                            <com.gdudes.app.gdudesapp.CustomViewTypes.GDRadioOptions
+                                android:id="@+id/MaxHeightSpinner"
+                                style="@style/Widget.AppCompat.Spinner.Underlined"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"></com.gdudes.app.gdudesapp.CustomViewTypes.GDRadioOptions>
+                        </TableRow>
+
+                        <TableRow android:paddingBottom="5dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Min weight" />
+
+                            <com.gdudes.app.gdudesapp.CustomViewTypes.GDRadioOptions
+                                android:id="@+id/MinWeightSpinner"
+                                style="@style/Widget.AppCompat.Spinner.Underlined"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"></com.gdudes.app.gdudesapp.CustomViewTypes.GDRadioOptions>
+                        </TableRow>
+
+                        <TableRow android:paddingBottom="5dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Max Weight" />
+
+                            <com.gdudes.app.gdudesapp.CustomViewTypes.GDRadioOptions
+                                android:id="@+id/MaxWeightSpinner"
+                                style="@style/Widget.AppCompat.Spinner.Underlined"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"></com.gdudes.app.gdudesapp.CustomViewTypes.GDRadioOptions>
+                        </TableRow>
+
+                        <TableRow android:paddingBottom="5dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Min age" />
+
+                            <com.gdudes.app.gdudesapp.CustomViewTypes.GDRadioOptions
+                                android:id="@+id/MinAgeSpinner"
+                                style="@style/Widget.AppCompat.Spinner.Underlined"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"></com.gdudes.app.gdudesapp.CustomViewTypes.GDRadioOptions>
+                        </TableRow>
+
+                        <TableRow android:paddingBottom="5dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Max age" />
+
+                            <com.gdudes.app.gdudesapp.CustomViewTypes.GDRadioOptions
+                                android:id="@+id/MaxAgeSpinner"
+                                style="@style/Widget.AppCompat.Spinner.Underlined"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"></com.gdudes.app.gdudesapp.CustomViewTypes.GDRadioOptions>
+                        </TableRow>
+
+                        <TableRow android:paddingBottom="5dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Body type" />
+
+                            <com.gdudes.app.gdudesapp.CustomViewTypes.GDCheckboxItems
+                                android:id="@+id/BodyTypeSpinner"
+                                style="@style/Widget.AppCompat.Spinner.Underlined"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"></com.gdudes.app.gdudesapp.CustomViewTypes.GDCheckboxItems>
+                        </TableRow>
+
+                        <TableRow android:paddingBottom="5dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Tattoos" />
+
+                            <com.gdudes.app.gdudesapp.CustomViewTypes.GDCheckboxItems
+                                android:id="@+id/TattoosSpinner"
+                                style="@style/Widget.AppCompat.Spinner.Underlined"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"></com.gdudes.app.gdudesapp.CustomViewTypes.GDCheckboxItems>
+                        </TableRow>
+
+                        <TableRow android:paddingBottom="5dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Piercings" />
+
+                            <com.gdudes.app.gdudesapp.CustomViewTypes.GDCheckboxItems
+                                android:id="@+id/PiercingsSpinner"
+                                style="@style/Widget.AppCompat.Spinner.Underlined"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"></com.gdudes.app.gdudesapp.CustomViewTypes.GDCheckboxItems>
+                        </TableRow>
+
+                        <TableRow android:paddingBottom="5dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Hair" />
+
+                            <com.gdudes.app.gdudesapp.CustomViewTypes.GDCheckboxItems
+                                android:id="@+id/HairSpinner"
+                                style="@style/Widget.AppCompat.Spinner.Underlined"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"></com.gdudes.app.gdudesapp.CustomViewTypes.GDCheckboxItems>
+                        </TableRow>
+
+                        <TableRow android:paddingBottom="5dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Body hair" />
+
+                            <com.gdudes.app.gdudesapp.CustomViewTypes.GDCheckboxItems
+                                android:id="@+id/BodyHairSpinner"
+                                style="@style/Widget.AppCompat.Spinner.Underlined"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"></com.gdudes.app.gdudesapp.CustomViewTypes.GDCheckboxItems>
+                        </TableRow>
+
+                        <TableRow android:paddingBottom="5dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Facial hair" />
+
+                            <com.gdudes.app.gdudesapp.CustomViewTypes.GDCheckboxItems
+                                android:id="@+id/FacialHairSpinner"
+                                style="@style/Widget.AppCompat.Spinner.Underlined"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"></com.gdudes.app.gdudesapp.CustomViewTypes.GDCheckboxItems>
+                        </TableRow>
+                    </TableLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/OtherStatsHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:background="@color/colorPrimary"
+                    android:orientation="horizontal"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Other Stats"
+                        android:textColor="@android:color/white" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="right">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/OtherStats_Plus"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="+"
+                                android:textColor="@android:color/white"
+                                android:textSize="24sp" />
+
+                            <TextView
+                                android:id="@+id/OtherStats_Minus"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="—"
+                                android:visibility="gone"
+                                android:textColor="@android:color/white"
+                                android:textSize="24sp" />
+                        </LinearLayout>
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/OtherStatsBody"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="5dp"
+                        android:stretchColumns="*">
+
+                        <TableRow android:paddingBottom="5dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Relationship Status" />
+
+                            <com.gdudes.app.gdudesapp.CustomViewTypes.GDCheckboxItems
+                                android:id="@+id/RelationshipStatusSpinner"
+                                style="@style/Widget.AppCompat.Spinner.Underlined"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"></com.gdudes.app.gdudesapp.CustomViewTypes.GDCheckboxItems>
+                        </TableRow>
+
+                        <TableRow android:paddingBottom="5dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Ethnicity" />
+
+                            <com.gdudes.app.gdudesapp.CustomViewTypes.GDCheckboxItems
+                                android:id="@+id/EthnicitySpinner"
+                                style="@style/Widget.AppCompat.Spinner.Underlined"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"></com.gdudes.app.gdudesapp.CustomViewTypes.GDCheckboxItems>
+                        </TableRow>
+
+                        <TableRow android:paddingBottom="5dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Religion" />
+
+                            <com.gdudes.app.gdudesapp.CustomViewTypes.GDCheckboxItems
+                                android:id="@+id/ReligionSpinner"
+                                style="@style/Widget.AppCompat.Spinner.Underlined"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"></com.gdudes.app.gdudesapp.CustomViewTypes.GDCheckboxItems>
+                        </TableRow>
+
+                        <TableRow android:paddingBottom="5dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Smoking" />
+
+                            <com.gdudes.app.gdudesapp.CustomViewTypes.GDCheckboxItems
+                                android:id="@+id/SmokingSpinner"
+                                style="@style/Widget.AppCompat.Spinner.Underlined"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"></com.gdudes.app.gdudesapp.CustomViewTypes.GDCheckboxItems>
+                        </TableRow>
+
+                        <TableRow android:paddingBottom="5dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Drinking" />
+
+                            <com.gdudes.app.gdudesapp.CustomViewTypes.GDCheckboxItems
+                                android:id="@+id/DrinkingSpinner"
+                                style="@style/Widget.AppCompat.Spinner.Underlined"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"></com.gdudes.app.gdudesapp.CustomViewTypes.GDCheckboxItems>
+                        </TableRow>
+                    </TableLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+</RelativeLayout>

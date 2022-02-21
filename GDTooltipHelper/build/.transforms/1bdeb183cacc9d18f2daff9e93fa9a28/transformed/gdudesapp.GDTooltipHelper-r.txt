@@ -1,0 +1,22 @@
+gdudesapp.GDTooltipHelper
+attr ttlm_arrowRatio
+attr ttlm_backgroundColor
+attr ttlm_cornerRadius
+attr ttlm_defaultStyle
+attr ttlm_duration
+attr ttlm_elevation
+attr ttlm_font
+attr ttlm_overlayStyle
+attr ttlm_padding
+attr ttlm_repeatCount
+attr ttlm_strokeColor
+attr ttlm_strokeWeight
+dimen ttlm_default_corner_radius
+dimen ttlm_default_elevation
+dimen ttlm_default_padding
+dimen ttlm_default_stroke_weight
+layout tooltip_textview
+style ToolTipLayoutDefaultStyle
+style ToolTipOverlayDefaultStyle
+styleable TooltipLayout android_gravity android_textAppearance ttlm_arrowRatio ttlm_backgroundColor ttlm_cornerRadius ttlm_elevation ttlm_font ttlm_overlayStyle ttlm_padding ttlm_strokeColor ttlm_strokeWeight
+styleable TooltipOverlay android_alpha android_color android_layout_margin ttlm_duration ttlm_repeatCount

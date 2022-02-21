@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "281316849667",
+    "firebase_url": "https://tactical-crow-120903.firebaseio.com",
+    "project_id": "tactical-crow-120903"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:281316849667:android:e5d89ef816d48d92",
+        "android_client_info": {
+          "package_name": "com.gdudes.app.gdudesapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "281316849667-rqlr21m90ie6chev6vkqrlp196jim6hc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gdudes.app.gdudesapp",
+            "certificate_hash": "602fe8907c6e9cdd7e634899f2095cd02274463d"
+          }
+        },
+        {
+          "client_id": "281316849667-g5d30mkm12e5gfvt2mrtojgn4gltkacf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAw1tC52eZe989CPOnLa1wOsm2K1fiqzzg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "281316849667-g5d30mkm12e5gfvt2mrtojgn4gltkacf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

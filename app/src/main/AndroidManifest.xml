@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.gdudes.app.gdudesapp"
+    android:installLocation="internalOnly"
+    android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.android.vending.BILLING" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+
+    <!--
+ The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but are recommended.
+    -->
+    <application
+        android:name=".GDApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_gdlogo"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:theme="@style/AppTheme">
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <service android:name=".GDServices.GDMessageService" />
+        <!-- Firebase Notifications -->
+        <service android:name=".GDServices.GDudesFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <service android:name=".GDServices.FirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        <!-- ./Firebase Notifications -->
+
+        <receiver
+            android:name=".GDServices.GDBootBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+                <action android:name="ANDROID.INTENT.ACTION.REBOOT" />
+
+                <category android:name="ANDROID.INTENT.CATEGORY.DEFAULT" />
+            </intent-filter>
+        </receiver>
+
+        <!--Required to open camera for android 24 (Nougat) and above.-->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.gdudesapp.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths"/>
+        </provider>
+
+        <activity
+            android:name=".activities.LoginRegister.RequestPermissionsActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.LoginRegister.LoginActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.MainLayout.LayoutActivity"
+            android:label="@string/title_activity_layout"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".activities.MessageWindow"
+            android:label="@string/title_activity_message_window"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.Pics.GDPicViewerActivity"
+            android:label="@string/title_activity_gdpic_viewer"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.Common.GDMapActivity"
+            android:label="@string/title_activity_gdmap"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.Pics.UploadPicsActivity"
+            android:label="@string/title_activity_manage_pics"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.Pics.ManagePicsActivity"
+            android:label="@string/title_activity_manage_pics"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.Pics.PicCommentsActivity"
+            android:label="@string/title_activity_pic_comments"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.MainLayout.AddUserFilter"
+            android:label="@string/title_activity_add_user_filter"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.Settings.AppSettingsActivity"
+            android:label="@string/title_activity_app_settings"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".activities.Settings.SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".activities.Settings.AccountSettingsActivity"
+            android:label="@string/title_activity_account_settings"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".activities.Settings.PrivacySettingsActivity"
+            android:label="@string/title_activity_privacy_settings"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".activities.Settings.ReportIssueMakeSugesstionActivity"
+            android:label="@string/title_activity_report_issue"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".activities.Settings.UnblockUsersActivity"
+            android:label="@string/title_activity_unblock_users"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".activities.LoginRegister.RegisterActivity"
+            android:label="@string/title_activity_register"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".activities.LoginRegister.RegisterProfileDescActivity"
+            android:label="@string/title_activity_register_profile_desc"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".activities.SplashActivity"
+            android:label="@string/title_activity_layout"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.Profile.IceBreakerActivity"
+            android:label="@string/title_activity_ice_breaker"
+            android:theme="@style/AppTheme.UserTemplatePopup"></activity>
+        <activity
+            android:name=".activities.Profile.ProfileEditActivity"
+            android:label="@string/title_activity_profile_edit"
+            android:theme="@style/AppTheme.UserTemplatePopup"></activity>
+        <activity
+            android:name=".activities.Pics.EditPicActivity"
+            android:label="@string/title_activity_edit_pic"
+            android:theme="@style/AppTheme.PopupThemeWithRoundedCorners"></activity>
+        <activity
+            android:name=".BillingUtil.GetPremiumActivity"
+            android:label="@string/title_activity_get_premium"
+            android:theme="@style/AppTheme.PopupThemeWithRoundedCorners"></activity>
+        <activity
+            android:name=".activities.MainLayout.GDPopularGuysInfoActivity"
+            android:label="@string/title_activity_popular_guys"
+            android:theme="@style/AppTheme.PopupThemeWithRoundedCorners"></activity>
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Base.Theme.AppCompat" />
+        <activity
+            android:name=".activities.LoginRegister.ForgotPasswordAndReSendVerificationActivity"
+            android:label="@string/title_activity_forgot_password_and_re_send_verification"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".activities.Settings.TermsAndPrivacyPolicyActivity"
+            android:label="@string/title_activity_gdweb_view"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".BillingUtil.PurchaseMonthOptionsActivity"
+            android:label="@string/title_activity_purchase_month_options"
+            android:theme="@style/AppTheme.PopupThemeWithRoundedCorners"></activity>
+        <activity
+            android:name=".activities.Profile.AddInstagramLinkActivity"
+            android:label="@string/title_activity_add_instagram_link"
+            android:theme="@style/AppTheme.UserTemplatePopup"></activity>
+        <activity
+            android:name=".activities.Common.GeneralMessageDisplayActivity"
+            android:label="@string/title_activity_general_message_display"
+            android:theme="@style/AppTheme.PopupThemeWithRoundedCorners"></activity>
+        <activity
+            android:name=".activities.Pics.PicLikesDetailsActivity"
+            android:label="@string/title_activity_pic_like_dislike_details"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".activities.Profile.NewProfileViewActivity"
+            android:label="@string/title_activity_new_profile_view"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.TransparentActionBar"></activity>
+        <activity
+            android:name=".BillingUtil.DonateInfoActivity"
+            android:label="@string/title_activity_donate_info"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".BillingUtil.DonateOptionsActivity"
+            android:label="@string/title_activity_donate_options"
+            android:theme="@style/AppTheme.PopupThemeWithRoundedCorners"></activity>
+    </application>
+
+</manifest>

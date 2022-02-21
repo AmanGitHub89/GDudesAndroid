@@ -1,0 +1,133 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/MessageWindowRootView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorMessageBackground"
+    tools:context="com.gdudes.app.gdudesapp.activities.MessageWindow">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/AddBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/ActivityToolbar"
+            android:layout_width="fill_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:layout_collapseMode="pin" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <RelativeLayout
+        android:id="@+id/BodyBelowAppBar"
+        android:layout_below="@+id/AddBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent">
+
+        <ListView
+            android:id="@+id/Messageslist"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_above="@+id/divider"
+            android:divider="@null"
+            android:dividerHeight="0dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:stackFromBottom="true"
+            android:transcriptMode="normal"
+            tools:listitem="@layout/message_left" />
+        <!--android:divider="@android:color/transparent"-->
+        <!--android:dividerHeight="10.0sp"-->
+
+        <RelativeLayout
+            android:id="@+id/divider"
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:layout_above="@+id/relSendMessage"
+            android:background="#000000" />
+
+        <LinearLayout
+            android:id="@+id/relSendMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="2dp"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ffffff">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toLeftOf="@+id/SendMessageContainer"
+                    android:orientation="horizontal"
+                    android:paddingBottom="2dp"
+                    android:paddingLeft="5dp">
+
+                    <ImageView
+                        android:id="@+id/Attach"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/message_attach" />
+
+                    <EditText
+                        android:id="@+id/newMessageText"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/sendMessageButton"
+                        android:layout_alignTop="@+id/sendMessageButton"
+                        android:layout_marginRight="10dp"
+                        android:layout_toLeftOf="@+id/sendMessageButton"
+                        android:background="#ffffff"
+                        android:hint="Type a message..."
+                        android:inputType="textCapSentences|textMultiLine"
+                        android:maxHeight="80dp"
+                        android:minHeight="50dp"
+                        android:textColor="#000000"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/SendMessageContainer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/sendMessageButton"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="@drawable/conversation_unreadcount"
+                        android:paddingLeft="2dp"
+                        android:paddingRight="3dp"
+                        android:paddingTop="2dp"
+                        android:src="@drawable/ic_send_message" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:id="@+id/MessageAttachmentLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/sendMessageButton"
+                android:background="#EFE7E7"
+                android:visibility="gone"></LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

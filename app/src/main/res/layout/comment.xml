@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:padding="10dp"
+    android:background="@drawable/conversation_selector"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.makeramen.roundedimageview.RoundedImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/UserImage"
+        android:src="@drawable/defaultuserprofilepic"
+        android:scaleType="fitCenter"
+        android:layout_width="60dp"
+        android:layout_height="46dp"
+        app:riv_corner_radius="150dip"
+        app:riv_border_color="#333333"
+        app:riv_mutate_background="true"
+        app:riv_oval="false" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:paddingTop="2dp"
+        android:layout_marginLeft="6dp"
+        android:layout_toRightOf="@id/UserImage"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:paddingRight="5dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="140dp"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:id="@+id/UserName"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/Comment"
+            android:visibility="visible"
+            android:gravity="left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#967373"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:maxWidth="130dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#967373"
+            android:textSize="12sp"
+            android:id="@+id/CommentDateTime"
+            android:ellipsize="end"
+            android:singleLine="true" />
+    </LinearLayout>
+</RelativeLayout>

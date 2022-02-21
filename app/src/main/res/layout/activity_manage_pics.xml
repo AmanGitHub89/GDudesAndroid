@@ -1,0 +1,75 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.gdudes.app.gdudesapp.activities.Pics.ManagePicsActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/ActivityToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:layout_collapseMode="pin" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <RelativeLayout
+        android:id="@+id/BodyBelowAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:background="@color/colorSecondary"
+            android:layout_height="fill_parent">
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/FragmentsViewPager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+            <gdudesapp.GDFloatingActionButton.FloatingActionsMenu
+                android:id="@+id/FABMenuAddPhoto"
+                app:fab_addButtonColorNormal="@color/gdfab_white"
+                app:fab_addButtonColorPressed="@color/gdfab_white_pressed"
+                app:fab_addButtonPlusIconColor="@color/gdfab_half_black"
+                app:fab_labelStyle="@style/gdfab_menu_labels_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp">
+
+                <gdudesapp.GDFloatingActionButton.FloatingActionButton
+                    android:id="@+id/FABAddPublicPhoto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:fab_icon="@drawable/ic_un_lock"
+                    app:fab_colorNormal="@color/colorPrimary"
+                    app:fab_title="Add public photo"
+                    app:fab_colorPressed="@color/colorPrimary" />
+
+                <gdudesapp.GDFloatingActionButton.FloatingActionButton
+                    android:id="@+id/FABAddPrivatePhoto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:fab_icon="@drawable/ic_lock"
+                    app:fab_colorNormal="@color/colorPrimary"
+                    app:fab_title="Add private photo"
+                    app:fab_colorPressed="@color/colorPrimary" />
+            </gdudesapp.GDFloatingActionButton.FloatingActionsMenu>
+
+        </RelativeLayout>
+    </RelativeLayout>
+</LinearLayout>

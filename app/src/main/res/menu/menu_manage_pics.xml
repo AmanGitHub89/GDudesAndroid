@@ -1,0 +1,35 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.gdudes.app.gdudesapp.activities.Pics.ManagePicsActivity">
+    <item
+        android:id="@+id/action_Edit"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_edit"
+        android:title="Edit"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_DeletePic"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_delete"
+        android:title="Delete photo"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_MakePrivate"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_make_photo_private"
+        android:title="Make Private"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_MakePublic"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_make_photo_public"
+        android:title="Make Public"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_OpenPhotos"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_open"
+        android:title="Open Photos"
+        app:showAsAction="always" />
+</menu>

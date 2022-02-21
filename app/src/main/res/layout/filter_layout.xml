@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:paddingRight="5dp"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/home_filter_background"
+        android:orientation="vertical"
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp">
+
+        <ListView
+            android:id="@+id/FilterListView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:divider="@null"
+            android:dividerHeight="0dp"
+            android:stackFromBottom="false"
+            android:transcriptMode="normal"
+            tools:listitem="@layout/home_filter_item" />
+
+        <com.gdudes.app.gdudesapp.CustomViewTypes.GifMovieView
+            android:id="@+id/LoadingGIF"
+            android:visibility="gone"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="center_horizontal"
+            custom:gif="@drawable/loading_ring"></com.gdudes.app.gdudesapp.CustomViewTypes.GifMovieView>
+
+        <RelativeLayout
+            android:id="@+id/Addfilter"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_toLeftOf="@+id/AddFilterText"
+                android:src="@drawable/ic_add"
+                android:layout_marginRight="5dp"
+                android:layout_width="24dp"
+                android:layout_height="24dp" />
+
+            <TextView
+                android:layout_marginTop="4dp"
+                android:id="@+id/AddFilterText"
+                android:text="Add Filter"
+                android:textColor="#ffffff"
+                android:layout_marginRight="10dp"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

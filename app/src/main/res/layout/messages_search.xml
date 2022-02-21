@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <EditText
+        android:id="@+id/txt_SearchMessages"
+        android:layout_alignParentBottom="true"
+        android:layout_width="fill_parent"
+        android:singleLine="true"
+        android:clickable="true"
+        android:lines="1"
+        android:hint="Search text"
+        android:inputType="textCapSentences"
+        android:layout_toLeftOf="@+id/MatchedText"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/MatchedText"
+        android:layout_toLeftOf="@+id/SearchMessagePrev"
+        android:layout_centerVertical="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/SearchMessagePrev"
+        android:src="@drawable/previous"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_toLeftOf="@+id/SearchMessageNext"
+        android:layout_width="24dp"
+        android:layout_height="24dp" />
+
+    <ImageView
+        android:id="@+id/SearchMessageNext"
+        android:src="@drawable/next"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_toLeftOf="@+id/CloseMessageSearch"
+        android:layout_width="24dp"
+        android:layout_height="24dp" />
+
+    <ImageView
+        android:id="@+id/CloseMessageSearch"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="8dp"
+        android:src="@drawable/close_2"
+        android:layout_width="24dp"
+        android:layout_height="24dp" />
+</RelativeLayout>

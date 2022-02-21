@@ -1,0 +1,406 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorSecondary"
+    tools:context="com.gdudes.app.gdudesapp.activities.Settings.SettingsActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/ActivityToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:layout_collapseMode="pin" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <RelativeLayout
+        android:id="@+id/BodyBelowAppBar"
+        android:layout_below="@id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/Settings_PrivacySettings"
+                    android:background="@drawable/ripple_effect"
+                    android:layout_width="match_parent"
+                    android:padding="10dp"
+                    android:layout_height="wrap_content">
+                    <!--<ImageView-->
+                    <!--android:id="@+id/Settings_PrivacySettings_Img"-->
+                    <!--android:src="@drawable/ic_send_message"-->
+                    <!--android:layout_marginRight="10dp"-->
+                    <!--android:layout_width="48dp"-->
+                    <!--android:layout_height="48dp" />-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_centerVertical="true"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="Privacy Settings"
+                            android:textSize="16sp"
+                            android:textColor="@color/colorPrimaryText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:text="Choose who can see what about you"
+                            android:textSize="10sp"
+                            android:layout_marginTop="2dp"
+                            android:textColor="@color/colorTextSecondary"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="10dp"
+                    android:background="@color/colorDivider"
+                    android:layout_height="1dp"></LinearLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/Settings_AppSettings"
+                    android:background="@drawable/ripple_effect"
+                    android:layout_width="match_parent"
+                    android:padding="10dp"
+                    android:layout_height="wrap_content">
+                    <!--<ImageView-->
+                    <!--android:id="@+id/Settings_AppSettings_Img"-->
+                    <!--android:src="@drawable/ic_send_message"-->
+                    <!--android:layout_marginRight="10dp"-->
+                    <!--android:layout_width="48dp"-->
+                    <!--android:layout_height="48dp" />-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_centerVertical="true"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="App Settings"
+                            android:textSize="16sp"
+                            android:textColor="@color/colorPrimaryText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:text="Notification tones, Unit system"
+                            android:textSize="10sp"
+                            android:layout_marginTop="2dp"
+                            android:textColor="@color/colorTextSecondary"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="10dp"
+                    android:background="@color/colorDivider"
+                    android:layout_height="1dp"></LinearLayout>
+
+                <RelativeLayout
+                    android:background="@drawable/ripple_effect"
+                    android:id="@+id/Settings_AccountSettings"
+                    android:layout_width="match_parent"
+                    android:padding="10dp"
+                    android:layout_height="wrap_content">
+                    <!--<ImageView-->
+                    <!--android:id="@+id/Settings_AccountSettings_Img"-->
+                    <!--android:src="@drawable/ic_send_message"-->
+                    <!--android:layout_marginRight="10dp"-->
+                    <!--android:layout_width="48dp"-->
+                    <!--android:layout_height="48dp" />-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_centerVertical="true"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="Account Settings"
+                            android:textSize="16sp"
+                            android:textColor="@color/colorPrimaryText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:text="Change username, password &amp; mobile number"
+                            android:textSize="10sp"
+                            android:layout_marginTop="2dp"
+                            android:textColor="@color/colorTextSecondary"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="10dp"
+                    android:background="@color/colorDivider"
+                    android:layout_height="1dp"></LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/Settings_BlockedList"
+                    android:background="@drawable/ripple_effect"
+                    android:layout_width="match_parent"
+                    android:padding="10dp"
+                    android:layout_height="wrap_content">
+                    <!--<ImageView-->
+                    <!--android:id="@+id/Settings_BlockedList_Img"-->
+                    <!--android:src="@drawable/ic_send_message"-->
+                    <!--android:layout_marginRight="10dp"-->
+                    <!--android:layout_width="48dp"-->
+                    <!--android:layout_height="48dp" />-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_centerVertical="true"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="Blocked guys"
+                            android:textSize="16sp"
+                            android:textColor="@color/colorPrimaryText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:id="@+id/BlockedGuysCount"
+                            android:textSize="10sp"
+                            android:text="0 guys blocked"
+                            android:layout_marginTop="2dp"
+                            android:textColor="@color/colorTextSecondary"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="10dp"
+                    android:background="@color/colorDivider"
+                    android:layout_height="1dp"></LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/Settings_ReportIssue"
+                    android:background="@drawable/ripple_effect"
+                    android:layout_width="match_parent"
+                    android:padding="10dp"
+                    android:layout_height="wrap_content">
+                    <!--<ImageView-->
+                    <!--android:id="@+id/Settings_ReportIssue_Img"-->
+                    <!--android:src="@drawable/ic_send_message"-->
+                    <!--android:layout_marginRight="10dp"-->
+                    <!--android:layout_width="48dp"-->
+                    <!--android:layout_height="48dp" />-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_centerVertical="true"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="Report an issue"
+                            android:textSize="16sp"
+                            android:textColor="@color/colorPrimaryText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:text="Let us know if you facing an issue with the app"
+                            android:textSize="10sp"
+                            android:layout_marginTop="2dp"
+                            android:textColor="@color/colorTextSecondary"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="10dp"
+                    android:background="@color/colorDivider"
+                    android:layout_height="1dp"></LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/Settings_MakeSuggesstion"
+                    android:background="@drawable/ripple_effect"
+                    android:layout_width="match_parent"
+                    android:padding="10dp"
+                    android:layout_height="wrap_content">
+                    <!--<ImageView-->
+                    <!--android:id="@+id/Settings_MakeSuggesstion_Img"-->
+                    <!--android:src="@drawable/ic_send_message"-->
+                    <!--android:layout_marginRight="10dp"-->
+                    <!--android:layout_width="48dp"-->
+                    <!--android:layout_height="48dp" />-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_centerVertical="true"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="Make a suggestion"
+                            android:textSize="16sp"
+                            android:textColor="@color/colorPrimaryText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:text="Have any suggestion for us?"
+                            android:textSize="10sp"
+                            android:layout_marginTop="2dp"
+                            android:textColor="@color/colorTextSecondary"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="10dp"
+                    android:background="@color/colorDivider"
+                    android:layout_height="1dp"></LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/Settings_TermOfUse"
+                    android:background="@drawable/ripple_effect"
+                    android:layout_width="match_parent"
+                    android:padding="10dp"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_centerVertical="true"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="Terms Of Use"
+                            android:textSize="16sp"
+                            android:textColor="@color/colorPrimaryText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:text="GDudes terms of use"
+                            android:textSize="10sp"
+                            android:layout_marginTop="2dp"
+                            android:textColor="@color/colorTextSecondary"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="10dp"
+                    android:background="@color/colorDivider"
+                    android:layout_height="1dp"></LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/Settings_PrivacyPolicy"
+                    android:background="@drawable/ripple_effect"
+                    android:layout_width="match_parent"
+                    android:padding="10dp"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_centerVertical="true"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="Privacy Policy"
+                            android:textSize="16sp"
+                            android:textColor="@color/colorPrimaryText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:text="GDudes privacy policy"
+                            android:textSize="10sp"
+                            android:layout_marginTop="2dp"
+                            android:textColor="@color/colorTextSecondary"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="10dp"
+                    android:background="@color/colorDivider"
+                    android:layout_height="1dp"></LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/Settings_Logout"
+                    android:background="@drawable/ripple_effect"
+                    android:layout_width="match_parent"
+                    android:padding="10dp"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_centerVertical="true"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="Logout"
+                            android:textSize="16sp"
+                            android:textColor="@color/colorPrimaryText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:text="Logout from your GDudes account"
+                            android:textSize="10sp"
+                            android:layout_marginTop="2dp"
+                            android:textColor="@color/colorTextSecondary"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="10dp"
+                    android:background="@color/colorDivider"
+                    android:layout_height="1dp"></LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.gdudes.app.gdudesapp.activities.Profile.NewProfileViewActivity">
+    <item
+        android:id="@+id/action_report"
+        android:orderInCategory="100"
+        android:title="Report User"
+        app:showAsAction="never" />
+</menu>

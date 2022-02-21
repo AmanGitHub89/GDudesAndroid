@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorSecondary"
+    tools:context="com.gdudes.app.gdudesapp.activities.Settings.UnblockUsersActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/GDAppBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/ActivityToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:layout_collapseMode="pin" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <RelativeLayout
+        android:id="@+id/BodyBelowAppBar"
+        android:layout_below="@+id/GDAppBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent">
+
+        <org.apmem.tools.layouts.FlowLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/SelectedTags"
+            android:padding="10dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"></org.apmem.tools.layouts.FlowLayout>
+
+        <FrameLayout
+            android:id="@+id/SearchUserLayout"
+            android:layout_below="@+id/SelectedTags"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/SearchUser"
+                android:hint="Search by name(min 3 char)"
+                android:singleLine="true"
+                android:inputType="textCapSentences"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:id="@+id/CancelSearch"
+                android:layout_gravity="right"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="8dp"
+                android:src="@drawable/close"
+                android:layout_width="24dp"
+                android:layout_height="24dp" />
+        </FrameLayout>
+
+        <RelativeLayout
+            android:id="@+id/ContentLoadedContainer"
+            android:visibility="gone"
+            android:layout_below="@+id/SearchUserLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/swipeUserList"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent">
+
+                <com.gdudes.app.gdudesapp.CustomViewTypes.GDGridView
+                    android:id="@+id/gvGrid"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:horizontalSpacing="1dp"
+                    android:numColumns="3"
+                    android:stretchMode="columnWidth"
+                    android:verticalSpacing="1dp"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior"></com.gdudes.app.gdudesapp.CustomViewTypes.GDGridView>
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/ContentLoadingContainer"
+            android:layout_below="@+id/SearchUserLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/ContentLoadingText"
+                android:text="Loading professions.."
+                android:textSize="18sp"
+                android:textStyle="bold|italic"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

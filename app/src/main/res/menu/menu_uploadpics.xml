@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.gdudes.app.gdudesapp.activities.Settings.AccountSettingsActivity">
+    <item
+        android:id="@+id/action_Cancel"
+        android:title="Upload"
+        android:icon="@drawable/ic_cross"
+        android:orderInCategory="100"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_Done"
+        android:icon="@drawable/ic_check"
+        android:title="Upload"
+        android:orderInCategory="100"
+        app:showAsAction="always" />
+</menu>
